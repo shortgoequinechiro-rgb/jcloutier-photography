@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — J. Cloutier Photography</title>
+<meta name="description" content="Get in touch with Jessie Cloutier about fine-art Western prints, licensing, or custom photography." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header id="site-header">
+  <a href="index.html" class="brand">J. Cloutier<small>Photography</small></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="gallery.html">Galleries</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Prints</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<!-- BANNER -->
+<section class="banner">
+  <img src="img-img-5101.jpg" alt="Riders on horseback at sunset" />
+  <div>
+    <div class="eyebrow">Get in Touch</div>
+    <h1>Contact</h1>
+    <div class="rule"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <div class="eyebrow">Let's Connect</div>
+      <h2 class="sec-title">Prints, licensing &amp; commissions</h2>
+      <p>Interested in a print, licensing an image, or working together on a project? Fill out the form and I'll be in touch shortly — I can't wait to hear from you.</p>
+
+      <div class="line">
+        <div class="label">Email</div>
+        <div class="val"><a href="mailto:jclophotography@yahoo.com">jclophotography@yahoo.com</a></div>
+      </div>
+      <div class="line">
+        <div class="label">Phone</div>
+        <div class="val"><a href="tel:+14065648289">(406) 564-8289</a></div>
+      </div>
+      <div class="line">
+        <div class="label">Follow Along</div>
+        <div class="val"><a href="https://www.instagram.com/j.cloutierphotography/" target="_blank" rel="noopener">@j.cloutierphotography</a></div>
+      </div>
+    </div>
+
+    <div>
+      <!-- NOTE: this mailto form opens the visitor's email app. For in-page submission,
+           connect a free service like Formspree (change the action URL) later. -->
+      <form action="mailto:jclophotography@yahoo.com" method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="field">
+          <label for="subject">I'm interested in</label>
+          <input type="text" id="subject" name="subject" placeholder="A print, licensing, a commission…" />
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">J. Cloutier<small>Photography</small></div>
+    <div class="contact">
+      <a href="mailto:jclophotography@yahoo.com">jclophotography@yahoo.com</a> &nbsp;·&nbsp; (406) 564-8289
+    </div>
+    <div class="social">
+      <a href="https://www.instagram.com/j.cloutierphotography/" target="_blank" rel="noopener">Instagram</a>
+      <a href="gallery.html">Galleries</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="fine">© <span id="yr"></span> J. Cloutier Photography · Capturing the Spirit of the West</div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
