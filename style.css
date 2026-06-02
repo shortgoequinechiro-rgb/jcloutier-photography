@@ -38,6 +38,11 @@ nav a{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight
 header.solid nav a,header.scrolled nav a{color:var(--ink);}
 nav a:hover,nav a.active{opacity:1;border-bottom-color:var(--accent);}
 .nav-toggle{display:none;}
+/* header social icon buttons */
+.nav-social{display:flex;align-items:center;gap:16px;}
+.nav-social a{display:inline-flex;align-items:center;border-bottom:none!important;opacity:.85;padding-bottom:0;transition:opacity .2s,transform .2s;}
+.nav-social a:hover{opacity:1;transform:translateY(-1px);}
+.nav-social svg{width:18px;height:18px;fill:currentColor;display:block;}
 
 /* ---------- Buttons / type helpers ---------- */
 .eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent-dark);font-weight:500;}
