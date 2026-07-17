@@ -5,20 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Galleries — J. Cloutier Photography</title>
 <meta name="description" content="Browse fine-art Western photography by Jessie Cloutier — horses, ranch life, big skies, wildlife, and black-and-white. Every image available as a print." />
+<link rel="canonical" href="https://jcloutierphotography.com/gallery.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Western Photography Galleries — J. Cloutier Photography" />
+<meta property="og:description" content="Browse horses, ranch life, big skies, wildlife, and black-and-white Western photography by Jessie Cloutier." />
+<meta property="og:url" content="https://jcloutierphotography.com/gallery.html" />
+<meta property="og:image" content="https://jcloutierphotography.com/asset-hero-alt.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#2c2a27" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=2" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header id="site-header" class="solid">
   <a href="index.html" class="brand">J. Cloutier<small>Photography</small></a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-  <nav id="nav">
-    <a href="gallery.html" class="active">Galleries</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  <nav id="nav" aria-label="Primary navigation">
+    <a href="gallery.html" class="active" aria-current="page">Galleries</a>
     <a href="about.html">About</a>
-    <a href="gallery.html">Prints</a>
+    <a href="prints.html">Prints</a>
     <a href="contact.html">Contact</a>
     <span class="nav-social">
       <a href="https://www.instagram.com/j.cloutierphotography/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a>
@@ -27,66 +37,68 @@
   </nav>
 </header>
 
-<section style="padding-top:150px;padding-bottom:60px;" class="center">
+<main id="main">
+<section class="center page-intro">
   <div class="wrap">
     <div class="eyebrow">Galleries</div>
     <h1 class="sec-title">The Collections</h1>
-    <p class="lead">Every image is available as a fine-art print on paper, canvas, or metal. Click any photo to view it larger.</p>
+    <p class="lead">Start with a signature selection, then explore the full Western collection. Select any photograph to view it larger or ask about a fine-art print.</p>
   </div>
 </section>
 
 <div class="wrap-wide" style="padding-bottom:100px;">
-  <div class="filterbar">
-    <button data-filter="all" class="active">All</button>
-    <button data-filter="horses">Horses</button>
-    <button data-filter="ranch">Ranch Life</button>
-    <button data-filter="skies">Big Skies</button>
-    <button data-filter="wildlife">Wildlife</button>
-    <button data-filter="bw">Black &amp; White</button>
+  <div class="filterbar" role="group" aria-label="Filter photographs by collection">
+    <button type="button" data-filter="featured" class="active" aria-pressed="true">Signature Works</button>
+    <button type="button" data-filter="all" aria-pressed="false">View All</button>
+    <button type="button" data-filter="horses" aria-pressed="false">Horses</button>
+    <button type="button" data-filter="ranch" aria-pressed="false">Ranch Life</button>
+    <button type="button" data-filter="skies" aria-pressed="false">Big Skies</button>
+    <button type="button" data-filter="wildlife" aria-pressed="false">Wildlife &amp; Wildflowers</button>
+    <button type="button" data-filter="bw" aria-pressed="false">Black &amp; White</button>
   </div>
   <div class="grid">
-      <a class="card" data-cat="horses" href="img-img-0025-2-2.jpg"><img src="img-img-0025-2-2.jpg" alt="Horses" loading="lazy" /></a>
-      <a class="card" data-cat="horses" href="img-img-0371.jpg"><img src="img-img-0371.jpg" alt="Horses" loading="lazy" /></a>
-      <a class="card" data-cat="horses" href="img-img-1869.jpg"><img src="img-img-1869.jpg" alt="Horses" loading="lazy" /></a>
-      <a class="card" data-cat="horses" href="img-img-4919.jpg"><img src="img-img-4919.jpg" alt="Horses" loading="lazy" /></a>
-      <a class="card" data-cat="horses" href="img-img-6664.jpg"><img src="img-img-6664.jpg" alt="Horses" loading="lazy" /></a>
-      <a class="card" data-cat="horses" href="img-img-6914.jpg"><img src="img-img-6914.jpg" alt="Horses" loading="lazy" /></a>
-      <a class="card" data-cat="horses" href="img-img-6917.jpg"><img src="img-img-6917.jpg" alt="Horses" loading="lazy" /></a>
-      <a class="card" data-cat="horses" href="img-img-7139.jpg"><img src="img-img-7139.jpg" alt="Horses" loading="lazy" /></a>
-      <a class="card" data-cat="horses" href="img-img-8213-2.jpg"><img src="img-img-8213-2.jpg" alt="Horses" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-dsc-0415.jpg"><img src="img-dsc-0415.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-0487.jpg"><img src="img-img-0487.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-1129-2.jpg"><img src="img-img-1129-2.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-4343.jpg"><img src="img-img-4343.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-5101.jpg"><img src="img-img-5101.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-5465.jpg"><img src="img-img-5465.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-6934.jpg"><img src="img-img-6934.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-7551.jpg"><img src="img-img-7551.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-7686.jpg"><img src="img-img-7686.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-8161.jpg"><img src="img-img-8161.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-8258.jpg"><img src="img-img-8258.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-8364.jpg"><img src="img-img-8364.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-8538.jpg"><img src="img-img-8538.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="ranch" href="img-img-6951.jpg"><img src="img-img-6951.jpg" alt="Ranch Life" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-4f542f56-d41f-4047-a402-e1b8c7ab5744.jpg"><img src="img-4f542f56-d41f-4047-a402-e1b8c7ab5744.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-1044.jpg"><img src="img-img-1044.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-1492.jpg"><img src="img-img-1492.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-1786.jpg"><img src="img-img-1786.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-1966-polarr.jpg"><img src="img-img-1966-polarr.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-2562-polarr.jpg"><img src="img-img-2562-polarr.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-4426-polarr.jpg"><img src="img-img-4426-polarr.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-7284-polarr.jpg"><img src="img-img-7284-polarr.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-8514-polarr.jpg"><img src="img-img-8514-polarr.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-9110-polarr.jpg"><img src="img-img-9110-polarr.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-9917-polarr.jpg"><img src="img-img-9917-polarr.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-img-9993-polarr.jpg"><img src="img-img-9993-polarr.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="skies" href="img-sunset-edited.jpg"><img src="img-sunset-edited.jpg" alt="Big Skies" loading="lazy" /></a>
-      <a class="card" data-cat="wildlife" href="img-img-6951-2.jpg"><img src="img-img-6951-2.jpg" alt="Wildlife" loading="lazy" /></a>
-      <a class="card" data-cat="wildlife" href="img-img-7070-polarr.jpg"><img src="img-img-7070-polarr.jpg" alt="Wildlife" loading="lazy" /></a>
-      <a class="card" data-cat="bw" href="img-img-1211.jpg"><img src="img-img-1211.jpg" alt="Black and White" loading="lazy" /></a>
-      <a class="card" data-cat="bw" href="img-img-1213.jpg"><img src="img-img-1213.jpg" alt="Black and White" loading="lazy" /></a>
-      <a class="card" data-cat="bw" href="img-img-4122-polarr.jpg"><img src="img-img-4122-polarr.jpg" alt="Black and White" loading="lazy" /></a>
-      <a class="card" data-cat="bw" href="img-img-7610.jpg"><img src="img-img-7610.jpg" alt="Black and White" loading="lazy" /></a>
+      <a class="card" data-cat="ranch" data-title="Lone Cow Beneath the Mountains" href="img-img-0025-2-2.jpg"><img src="img-img-0025-2-2.jpg" alt="A lone cow standing by a fence with mountains in the distance" loading="lazy" /></a>
+      <a class="card" data-cat="horses" data-featured="true" data-title="Through the Water" href="img-img-0371.jpg"><img src="img-img-0371.jpg" alt="A horse running through shallow water" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="horses" data-featured="true" data-title="Last Light" href="img-img-1869.jpg"><img src="img-img-1869.jpg" alt="A horse and handler silhouetted against a Western sunset" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="horses" data-title="The Crossing" href="img-img-4919.jpg"><img src="img-img-4919.jpg" alt="A horse crossing a sunlit stream" loading="lazy" /></a>
+      <a class="card" data-cat="horses" data-featured="true" data-title="Golden Run" href="img-img-6664.jpg"><img src="img-img-6664.jpg" alt="A herd of horses moving through golden sunset light" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="horses" data-title="Evening Graze" href="img-img-6914.jpg"><img src="img-img-6914.jpg" alt="Horses grazing in warm evening light" loading="lazy" /></a>
+      <a class="card" data-cat="horses" data-title="High Country Riders" href="img-img-6917.jpg"><img src="img-img-6917.jpg" alt="Riders and horses crossing rocky high-country ranch land" loading="lazy" /></a>
+      <a class="card" data-cat="horses" data-title="Under a Wide Sky" href="img-img-7139.jpg"><img src="img-img-7139.jpg" alt="Mounted riders moving cattle beneath a wide gray sky" loading="lazy" /></a>
+      <a class="card" data-cat="horses" data-featured="true" data-title="Sunset Silhouette" href="img-img-8213-2.jpg"><img src="img-img-8213-2.jpg" alt="A horse silhouetted against a glowing orange sunset" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="ranch" data-featured="true" data-title="Carrying the Flag" href="img-dsc-0415.jpg"><img src="img-dsc-0415.jpg" alt="A horseback rider carrying an American flag at dusk" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="ranch" data-title="Creek Crossing" href="img-img-0487.jpg"><img src="img-img-0487.jpg" alt="A saddled horse crossing a clear mountain creek" loading="lazy" /></a>
+      <a class="card" data-cat="ranch" data-title="Boot and Spur" href="img-img-1129-2.jpg"><img src="img-img-1129-2.jpg" alt="Close view of a worn Western boot and metal spur" loading="lazy" /></a>
+      <a class="card" data-cat="ranch" data-title="In the Saddle" href="img-img-4343.jpg"><img src="img-img-4343.jpg" alt="A mounted rider photographed close beside a horse" loading="lazy" /></a>
+      <a class="card" data-cat="ranch" data-featured="true" data-title="Heading Home" href="img-img-5101.jpg"><img src="img-img-5101.jpg" alt="Horseback riders silhouetted against an orange sunset" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="ranch" data-featured="true" data-title="Autumn Colors" href="img-img-5465.jpg"><img src="img-img-5465.jpg" alt="A rider carrying an American flag among autumn trees" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="ranch" data-title="Saddle Leather" href="img-img-7551.jpg"><img src="img-img-7551.jpg" alt="A close black-and-white view of Western saddle leather" loading="lazy" /></a>
+      <a class="card" data-cat="ranch" data-featured="true" data-title="Hands of the West" href="img-img-7686.jpg"><img src="img-img-7686.jpg" alt="A cowgirl holding rope beside a working saddle" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="ranch" data-title="Rose Mountain" href="img-img-8161.jpg"><img src="img-img-8161.jpg" alt="A rider on a pale horse before pink-lit mountains" loading="lazy" /></a>
+      <a class="card" data-cat="ranch" data-title="Cow at Sundown" href="img-img-8258.jpg"><img src="img-img-8258.jpg" alt="A cow silhouetted in deep orange evening light" loading="lazy" /></a>
+      <a class="card" data-cat="ranch" data-title="Mountain Ranch" href="img-img-8364.jpg"><img src="img-img-8364.jpg" alt="A horseback rider against a rugged mountain backdrop" loading="lazy" /></a>
+      <a class="card" data-cat="ranch" data-title="Pack Country" href="img-img-8538.jpg"><img src="img-img-8538.jpg" alt="A rider and pack horse traveling through open ranch country" loading="lazy" /></a>
+      <a class="card" data-cat="ranch" data-title="Moving the Herd" href="img-img-6951.jpg"><img src="img-img-6951.jpg" alt="A horseback rider driving cattle across open ground" loading="lazy" /></a>
+      <a class="card" data-cat="skies" data-featured="true" data-title="Rainbow on the Plains" href="img-4f542f56-d41f-4047-a402-e1b8c7ab5744.jpg"><img src="img-4f542f56-d41f-4047-a402-e1b8c7ab5744.jpg" alt="A rainbow beneath storm clouds over open plains" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="skies" data-title="Road Into the Storm" href="img-img-1044.jpg"><img src="img-img-1044.jpg" alt="A ranch road and sign beneath a dramatic storm sky" loading="lazy" /></a>
+      <a class="card" data-cat="skies" data-title="Mountain Meadow" href="img-img-1492.jpg"><img src="img-img-1492.jpg" alt="A green meadow and evergreen forest below mountain peaks" loading="lazy" /></a>
+      <a class="card" data-cat="skies" data-title="Rolling Country" href="img-img-1966-polarr.jpg"><img src="img-img-1966-polarr.jpg" alt="Sunlight crossing rolling Western hills beneath a broad sky" loading="lazy" /></a>
+      <a class="card" data-cat="skies" data-title="Still Water" href="img-img-2562-polarr.jpg"><img src="img-img-2562-polarr.jpg" alt="A quiet mountain lake reflecting forested slopes" loading="lazy" /></a>
+      <a class="card" data-cat="skies" data-featured="true" data-title="Lake at Dusk" href="img-img-4426-polarr.jpg"><img src="img-img-4426-polarr.jpg" alt="Warm sunset light reflected across a mountain lake" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="skies" data-title="Red Rock Country" href="img-img-7284-polarr.jpg"><img src="img-img-7284-polarr.jpg" alt="Layered mountains and red rock country beneath blue sky" loading="lazy" /></a>
+      <a class="card" data-cat="skies" data-title="River Below" href="img-img-8514-polarr.jpg"><img src="img-img-8514-polarr.jpg" alt="A winding river viewed from high above a rugged canyon" loading="lazy" /></a>
+      <a class="card" data-cat="skies" data-title="Clear Water" href="img-img-9110-polarr.jpg"><img src="img-img-9110-polarr.jpg" alt="A yellow raft floating on a clear blue-green river" loading="lazy" /></a>
+      <a class="card" data-cat="skies" data-featured="true" data-title="Break in the Storm" href="img-img-9917-polarr.jpg"><img src="img-img-9917-polarr.jpg" alt="Sunbeams breaking through storm clouds above the mountains" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="skies" data-title="Alpine Distance" href="img-img-9993-polarr.jpg"><img src="img-img-9993-polarr.jpg" alt="An expansive alpine mountain vista under pale clouds" loading="lazy" /></a>
+      <a class="card" data-cat="skies" data-title="Painted Evening" href="img-sunset-edited.jpg"><img src="img-sunset-edited.jpg" alt="Pink and purple sunset reflected over a calm lake" loading="lazy" /></a>
+      <a class="card" data-cat="wildlife" data-featured="true" data-title="Bison Portrait" href="img-img-6934.jpg"><img src="img-img-6934.jpg" alt="A close portrait of a bison facing the camera" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="wildlife" data-title="Bison of the Plains" href="img-img-6951-2.jpg"><img src="img-img-6951-2.jpg" alt="A bison in profile against open plains" loading="lazy" /></a>
+      <a class="card" data-cat="wildlife" data-title="Prairie Color" href="img-img-1786.jpg"><img src="img-img-1786.jpg" alt="Pink wildflowers blooming across a Western prairie" loading="lazy" /></a>
+      <a class="card" data-cat="wildlife" data-title="Wildflower Light" href="img-img-7070-polarr.jpg"><img src="img-img-7070-polarr.jpg" alt="Delicate pink wildflowers glowing in soft light" loading="lazy" /></a>
+      <a class="card" data-cat="bw" data-featured="true" data-title="Eight Seconds" href="img-img-1211.jpg"><img src="img-img-1211.jpg" alt="Black-and-white photograph of a rider on a bucking horse" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="bw" data-title="Across the Valley" href="img-img-1213.jpg"><img src="img-img-1213.jpg" alt="Black-and-white mountain landscape with a distant herd" loading="lazy" /></a>
+      <a class="card" data-cat="bw" data-featured="true" data-title="Rider Under the Moon" href="img-img-4122-polarr.jpg"><img src="img-img-4122-polarr.jpg" alt="Black-and-white rider on horseback beneath the moon" loading="lazy" decoding="async" /></a>
+      <a class="card" data-cat="bw" data-title="Saddle Horn" href="img-img-7610.jpg"><img src="img-img-7610.jpg" alt="Black-and-white close view of a worn saddle horn" loading="lazy" /></a>
   </div>
 </div>
 
@@ -95,10 +107,11 @@
   <div class="wrap">
     <div class="eyebrow" style="color:#e6d6bd;">Fine-Art Prints</div>
     <h2 class="sec-title">Found one you love?</h2>
-    <p class="lead">Reach out and I'll help you choose the perfect size and finish — paper, canvas, or metal — printed to order and shipped to your door.</p>
-    <a href="contact.html" class="cta btn-light" style="margin-top:30px;">Inquire About a Print</a>
+    <p class="lead">See how print ordering works, then choose a favorite and Jessie will help you find the right size and finish.</p>
+    <a href="prints.html" class="cta btn-light" style="margin-top:30px;">Explore Prints</a>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
@@ -110,20 +123,21 @@
     <div class="social">
       <a href="https://www.instagram.com/j.cloutierphotography/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/share/19r7W5c7UH/" target="_blank" rel="noopener">Facebook</a>
-      <a href="about.html">About</a>
+      <a href="prints.html">Prints</a>
     </div>
-    <div class="fine">© <span id="yr"></span> J. Cloutier Photography · Capturing the Spirit of the West</div>
+    <div class="fine">© <span id="yr"></span> J. Cloutier Photography · Capturing the Spirit of the West · <a href="privacy.html">Privacy</a></div>
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox">
-  <span class="lb-close">&times;</span>
-  <span class="lb-nav lb-prev">&#8249;</span>
-  <img src="" alt="Enlarged photograph" />
-  <span class="lb-nav lb-next">&#8250;</span>
-  <div class="lb-bar"><a href="contact.html" class="btn btn-light">Inquire About This Print</a></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph viewer" aria-hidden="true">
+  <button type="button" class="lb-close" aria-label="Close photograph viewer">&times;</button>
+  <button type="button" class="lb-nav lb-prev" aria-label="Previous photograph">&#8249;</button>
+  <img class="lb-image" alt="" />
+  <button type="button" class="lb-nav lb-next" aria-label="Next photograph">&#8250;</button>
+  <div class="lb-meta"><div class="lb-caption"></div><div class="lb-count" aria-live="polite"></div></div>
+  <div class="lb-bar"><a href="contact.html?interest=print" class="btn btn-light lb-inquiry">Inquire About This Print</a></div>
 </div>
 
-<script src="site.js"></script>
+<script src="site.js?v=3" defer></script>
 </body>
 </html>
