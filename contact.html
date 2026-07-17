@@ -5,21 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Contact — J. Cloutier Photography</title>
 <meta name="description" content="Get in touch with Jessie Cloutier about fine-art Western prints, licensing, or custom photography." />
+<link rel="canonical" href="https://jcloutierphotography.com/contact.html" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Contact Jessie — J. Cloutier Photography" />
+<meta property="og:description" content="Ask Jessie Cloutier about fine-art prints, image licensing, or photography commissions." />
+<meta property="og:url" content="https://jcloutierphotography.com/contact.html" />
+<meta property="og:image" content="https://jcloutierphotography.com/img-img-5101.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#2c2a27" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=2" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Montserrat:wght@300;400;500&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header id="site-header">
   <a href="index.html" class="brand">J. Cloutier<small>Photography</small></a>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-  <nav id="nav">
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  <nav id="nav" aria-label="Primary navigation">
     <a href="gallery.html">Galleries</a>
     <a href="about.html">About</a>
-    <a href="gallery.html">Prints</a>
-    <a href="contact.html" class="active">Contact</a>
+    <a href="prints.html">Prints</a>
+    <a href="contact.html" class="active" aria-current="page">Contact</a>
     <span class="nav-social">
       <a href="https://www.instagram.com/j.cloutierphotography/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a>
       <a href="https://www.facebook.com/share/19r7W5c7UH/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
@@ -27,9 +37,10 @@
   </nav>
 </header>
 
+<main id="main">
 <!-- BANNER -->
 <section class="banner">
-  <img src="img-img-5101.jpg" alt="Riders on horseback at sunset" />
+  <img src="img-img-5101.jpg" alt="Riders on horseback at sunset" fetchpriority="high" />
   <div>
     <div class="eyebrow">Get in Touch</div>
     <h1>Contact</h1>
@@ -61,30 +72,37 @@
     </div>
 
     <div>
-      <!-- NOTE: this mailto form opens the visitor's email app. For in-page submission,
-           connect a free service like Formspree (change the action URL) later. -->
-      <form action="mailto:jclophotography@yahoo.com" method="post" enctype="text/plain">
+      <form action="https://formsubmit.co/jclophotography@yahoo.com" method="post">
+        <input type="hidden" name="_subject" value="New J. Cloutier Photography inquiry" />
+        <input type="hidden" name="_next" value="https://jcloutierphotography.com/thanks.html" />
+        <input type="hidden" name="_template" value="table" />
+        <div class="honeypot" aria-hidden="true">
+          <label for="company">Leave this field empty</label>
+          <input type="text" id="company" name="_honey" tabindex="-1" autocomplete="off" />
+        </div>
         <div class="field">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="Name" autocomplete="name" required />
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="Email" autocomplete="email" required />
         </div>
         <div class="field">
-          <label for="subject">I'm interested in</label>
-          <input type="text" id="subject" name="subject" placeholder="A print, licensing, a commission…" />
+          <label for="interest">I'm interested in</label>
+          <input type="text" id="interest" name="Interest" placeholder="A print, licensing, a commission…" />
         </div>
         <div class="field">
           <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="Message" required></textarea>
         </div>
         <button type="submit" class="btn">Send Message</button>
+        <p class="small-note">By sending this form, you agree that Jessie may use your details to reply to your inquiry. See the <a class="inline-link" href="privacy.html">privacy notice</a>.</p>
       </form>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
@@ -95,12 +113,12 @@
     <div class="social">
       <a href="https://www.instagram.com/j.cloutierphotography/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/share/19r7W5c7UH/" target="_blank" rel="noopener">Facebook</a>
-      <a href="gallery.html">Galleries</a>
+      <a href="prints.html">Prints</a>
     </div>
-    <div class="fine">© <span id="yr"></span> J. Cloutier Photography · Capturing the Spirit of the West</div>
+    <div class="fine">© <span id="yr"></span> J. Cloutier Photography · Capturing the Spirit of the West · <a href="privacy.html">Privacy</a></div>
   </div>
 </footer>
 
-<script src="site.js"></script>
+<script src="site.js?v=3" defer></script>
 </body>
 </html>

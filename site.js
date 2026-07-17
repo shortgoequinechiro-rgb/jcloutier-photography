@@ -1,90 +1,168 @@
 /* J. Cloutier Photography — shared site scripts */
 (function () {
-  // ---- Header background on scroll ----
   var header = document.getElementById('site-header');
   if (header && !header.classList.contains('solid')) {
-    var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 60); };
+    var onScroll = function () {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // ---- Mobile nav ----
   var toggle = document.getElementById('navToggle');
   var nav = document.getElementById('nav');
   if (toggle && nav) {
+    var setMenu = function (open) {
+      nav.classList.toggle('open', open);
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.classList.toggle('nav-open', open);
+    };
+
     toggle.addEventListener('click', function () {
-      nav.classList.toggle('open');
-      toggle.classList.toggle('open');
+      setMenu(!nav.classList.contains('open'));
     });
-    nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        nav.classList.remove('open');
-        toggle.classList.remove('open');
-      });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && nav.classList.contains('open')) {
+        setMenu(false);
+        toggle.focus();
+      }
     });
   }
 
-  // ---- Year in footer ----
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  // ---- Gallery filter ----
+  var query = new URLSearchParams(window.location.search);
+  var interest = query.get('interest');
+  var imageTitle = query.get('image');
+  var interestField = document.getElementById('interest');
+  if (interest && interestField) {
+    interestField.value = interest === 'print' ? 'A fine-art print' : interest;
+    if (imageTitle) interestField.value += ' — ' + imageTitle;
+  }
+
   var filterbar = document.querySelector('.filterbar');
   var grid = document.querySelector('.grid');
   if (filterbar && grid) {
     var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
-    var apply = function (cat) {
-      cards.forEach(function (c) {
-        c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+    var applyFilter = function (category, updateHash) {
+      cards.forEach(function (card) {
+        var show = category === 'all' ||
+          (category === 'featured' && card.dataset.featured === 'true') ||
+          card.dataset.cat === category;
+        card.hidden = !show;
       });
-      filterbar.querySelectorAll('button').forEach(function (b) {
-        b.classList.toggle('active', b.dataset.filter === cat);
+      filterbar.querySelectorAll('button').forEach(function (button) {
+        var active = button.dataset.filter === category;
+        button.classList.toggle('active', active);
+        button.setAttribute('aria-pressed', String(active));
       });
+      if (updateHash) {
+        history.replaceState(null, '', category === 'featured' ? location.pathname : '#' + category);
+      }
     };
-    filterbar.addEventListener('click', function (e) {
-      var btn = e.target.closest('button');
-      if (btn) apply(btn.dataset.filter);
+
+    filterbar.addEventListener('click', function (event) {
+      var button = event.target.closest('button');
+      if (button) applyFilter(button.dataset.filter, true);
     });
-    // honor #hash deep links (e.g. gallery.html#horses)
+
     var hash = (location.hash || '').replace('#', '');
-    var valid = ['all', 'horses', 'ranch', 'skies', 'wildlife', 'bw'];
-    apply(valid.indexOf(hash) >= 0 ? hash : 'all');
+    var valid = ['featured', 'all', 'horses', 'ranch', 'skies', 'wildlife', 'bw'];
+    applyFilter(valid.indexOf(hash) >= 0 ? hash : 'featured', false);
   }
 
-  // ---- Lightbox ----
-  var lb = document.getElementById('lightbox');
-  if (lb && grid) {
-    var lbImg = lb.querySelector('img');
-    var visible = function () {
-      return Array.prototype.slice.call(grid.querySelectorAll('.card'))
-        .filter(function (c) { return c.style.display !== 'none'; });
+  var lightbox = document.getElementById('lightbox');
+  if (lightbox && grid) {
+    var lightboxImage = lightbox.querySelector('.lb-image');
+    var lightboxCaption = lightbox.querySelector('.lb-caption');
+    var lightboxCount = lightbox.querySelector('.lb-count');
+    var lightboxInquiry = lightbox.querySelector('.lb-inquiry');
+    var closeButton = lightbox.querySelector('.lb-close');
+    var previousButton = lightbox.querySelector('.lb-prev');
+    var nextButton = lightbox.querySelector('.lb-next');
+    var index = 0;
+    var list = [];
+    var lastFocus = null;
+
+    var visibleCards = function () {
+      return Array.prototype.slice.call(grid.querySelectorAll('.card:not([hidden])'));
     };
-    var idx = 0, list = [];
-    var show = function (i) {
-      list = visible();
+
+    var show = function (nextIndex) {
+      list = visibleCards();
       if (!list.length) return;
-      idx = (i + list.length) % list.length;
-      var src = list[idx].querySelector('img').getAttribute('src');
-      lbImg.setAttribute('src', src);
-      lb.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      index = (nextIndex + list.length) % list.length;
+      var card = list[index];
+      var image = card.querySelector('img');
+      var title = card.dataset.title || image.alt;
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt;
+      lightboxCaption.textContent = title;
+      lightboxCount.textContent = (index + 1) + ' of ' + list.length;
+      lightboxInquiry.href = 'contact.html?interest=print&image=' + encodeURIComponent(title);
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('lightbox-open');
     };
-    var close = function () { lb.classList.remove('open'); document.body.style.overflow = ''; };
-    grid.addEventListener('click', function (e) {
-      var card = e.target.closest('.card');
+
+    var open = function (card) {
+      lastFocus = document.activeElement;
+      show(visibleCards().indexOf(card));
+      closeButton.focus();
+    };
+
+    var close = function () {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('lightbox-open');
+      lightboxImage.removeAttribute('src');
+      if (lastFocus) lastFocus.focus();
+    };
+
+    grid.addEventListener('click', function (event) {
+      var card = event.target.closest('.card');
       if (!card) return;
-      e.preventDefault();
-      show(visible().indexOf(card));
+      event.preventDefault();
+      open(card);
     });
-    lb.querySelector('.lb-close').addEventListener('click', close);
-    lb.querySelector('.lb-prev').addEventListener('click', function () { show(idx - 1); });
-    lb.querySelector('.lb-next').addEventListener('click', function () { show(idx + 1); });
-    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
-    document.addEventListener('keydown', function (e) {
-      if (!lb.classList.contains('open')) return;
-      if (e.key === 'Escape') close();
-      if (e.key === 'ArrowLeft') show(idx - 1);
-      if (e.key === 'ArrowRight') show(idx + 1);
+    closeButton.addEventListener('click', close);
+    previousButton.addEventListener('click', function () { show(index - 1); });
+    nextButton.addEventListener('click', function () { show(index + 1); });
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) close();
     });
+    document.addEventListener('keydown', function (event) {
+      if (!lightbox.classList.contains('open')) return;
+      if (event.key === 'Escape') close();
+      if (event.key === 'ArrowLeft') show(index - 1);
+      if (event.key === 'ArrowRight') show(index + 1);
+      if (event.key === 'Tab') {
+        var focusable = [closeButton, previousButton, nextButton, lightboxInquiry];
+        var current = focusable.indexOf(document.activeElement);
+        if (event.shiftKey && current <= 0) {
+          event.preventDefault();
+          focusable[focusable.length - 1].focus();
+        } else if (!event.shiftKey && current === focusable.length - 1) {
+          event.preventDefault();
+          focusable[0].focus();
+        }
+      }
+    });
+
+    if (imageTitle) {
+      var requestedCard = Array.prototype.slice.call(grid.querySelectorAll('.card')).find(function (card) {
+        return card.dataset.title === imageTitle;
+      });
+      if (requestedCard) {
+        applyFilter('all', false);
+        open(requestedCard);
+      }
+    }
   }
 })();
