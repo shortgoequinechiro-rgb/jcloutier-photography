@@ -105,7 +105,7 @@
       lightboxImage.alt = image.alt;
       lightboxCaption.textContent = title;
       lightboxCount.textContent = (index + 1) + ' of ' + list.length;
-      lightboxInquiry.href = 'contact.html?interest=print&image=' + encodeURIComponent(title);
+      lightboxInquiry.href = 'https://jcloutierphotography.pixieset.com/fineartprints/';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.classList.add('lightbox-open');
