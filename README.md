@@ -27,10 +27,11 @@ The contact form is delivered to `jclophotography@yahoo.com` through
 FormSubmit. The first real submission requires a one-time activation click in
 Jessie's inbox.
 
-The website currently supports print inquiries. When Jessie's Pixieset store
-is public, update the print calls to action to its verified public storefront
-URL after checking the products, pricing, payout details, shipping, and the
-customer checkout flow.
+The print page and gallery lightbox link to Jessie's published Pixieset
+collection at `https://jcloutierphotography.pixieset.com/fineartprints/`.
+Jessie owns the products, pricing, payout details, tax, terms, shipping, and
+customer checkout settings inside Pixieset. The contact form remains available
+for print questions and custom requests.
 
 ## Deployment
 
