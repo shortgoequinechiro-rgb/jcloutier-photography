@@ -1,6 +1,20 @@
 /* ===========================================================
    J. Cloutier Photography — shared stylesheet
    =========================================================== */
+@font-face{
+  font-family:'Cormorant Garamond';
+  font-style:normal;
+  font-weight:400 600;
+  font-display:swap;
+  src:url('fonts/cormorant-garamond-latin.woff2') format('woff2');
+}
+@font-face{
+  font-family:'Montserrat';
+  font-style:normal;
+  font-weight:300 500;
+  font-display:swap;
+  src:url('fonts/montserrat-latin.woff2') format('woff2');
+}
 :root{
   --ink:#2c2a27;
   --muted:#6f6862;
@@ -36,9 +50,10 @@ header{
   padding:20px 40px;transition:background .35s ease,padding .35s ease,box-shadow .35s ease;
 }
 header.solid,header.scrolled{background:rgba(251,249,246,.96);padding:14px 40px;box-shadow:0 1px 0 var(--line);}
-.brand{font-family:var(--serif);font-size:1.45rem;letter-spacing:.02em;color:#fff;transition:color .35s ease;line-height:1.1;}
+.brand{position:relative;z-index:60;font-family:var(--serif);font-size:1.45rem;letter-spacing:.02em;color:#fff;transition:color .35s ease;line-height:1.1;}
 .brand small{display:block;font-family:var(--sans);font-weight:300;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;margin-top:3px;opacity:.85;}
 header.solid .brand,header.scrolled .brand{color:var(--ink);}
+.nav-open header .brand{color:var(--ink);}
 nav{display:flex;gap:34px;}
 nav a{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#fff;opacity:.92;transition:color .35s ease,opacity .2s;padding-bottom:3px;border-bottom:1px solid transparent;}
 header.solid nav a,header.scrolled nav a{color:var(--ink);}
@@ -208,7 +223,7 @@ footer .contact a:hover{color:#fff;}
 footer .social{margin-top:18px;display:flex;gap:26px;justify-content:center;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;}
 footer .social a{border-bottom:1px solid transparent;padding-bottom:3px;}
 footer .social a:hover{border-bottom-color:var(--accent);}
-footer .fine{margin-top:40px;font-size:.66rem;letter-spacing:.12em;color:#7d756c;}
+footer .fine{margin-top:40px;font-size:.66rem;letter-spacing:.12em;color:#a39a90;}
 footer .fine a{border-bottom:1px solid transparent;}
 footer .fine a:hover{color:#cfc7bd;border-bottom-color:var(--accent);}
 
